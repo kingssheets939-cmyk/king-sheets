@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>King Sheets | Planilha Financeira Hello Kitty</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(180deg, #0b2d3a, #315f73 45%, #496f80);
+      color: #ffffff;
+      min-height: 100vh;
+    }
+
+    .page {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 32px 18px 40px;
+    }
+
+    .hero {
+      text-align: center;
+      padding-top: 10px;
+    }
+
+    .logo {
+      width: 118px;
+      height: 118px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid rgba(255,255,255,.35);
+      box-shadow: 0 0 40px rgba(34,197,94,.45), 0 12px 35px rgba(0,0,0,.25);
+      background: #0b2d3a;
+    }
+
+    h1 {
+      margin-top: 18px;
+      font-size: 34px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .headline {
+      margin-top: 24px;
+      font-size: 26px;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+
+    .headline span {
+      color: #ff9ac8;
+    }
+
+    .subtitle {
+      margin: 14px auto 0;
+      color: rgba(255,255,255,.82);
+      font-size: 17px;
+      line-height: 1.5;
+      max-width: 430px;
+    }
+
+    .notice {
+      margin: 26px 0;
+      background: rgba(255,255,255,.92);
+      color: #21313a;
+      border-radius: 18px;
+      padding: 18px;
+      text-align: left;
+      box-shadow: 0 10px 28px rgba(0,0,0,.16);
+    }
+
+    .notice strong {
+      color: #102e3c;
+    }
+
+    .notice p {
+      margin-top: 9px;
+      color: #64727b;
+      line-height: 1.4;
+    }
+
+    .tag {
+      display: inline-flex;
+      margin: 4px auto 22px;
+      padding: 10px 18px;
+      background: #ffe0ef;
+      color: #c2185b;
+      border-radius: 999px;
+      font-weight: 800;
+    }
+
+    .section-title {
+      text-align: center;
+      margin: 26px 0 16px;
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .product-card,
+    .faq,
+    .testimonial {
+      background: rgba(255,255,255,.22);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 20px;
+      padding: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.12);
+    }
+
+    .product-card {
+      position: relative;
+    }
+
+    .badge {
+      position: absolute;
+      right: 14px;
+      top: -12px;
+      background: #ff5a9b;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      box-shadow: 0 5px 12px rgba(0,0,0,.2);
+    }
+
+    .preview {
+      width: 100%;
+      border-radius: 18px;
+      margin: 14px 0 8px;
+      box-shadow: 0 16px 35px rgba(0,0,0,.28);
+      border: 1px solid rgba(255,255,255,.24);
+    }
+
+    .price {
+      margin-top: 10px;
+      font-weight: 900;
+      color: #7df7b2;
+      font-size: 24px;
+      text-align: center;
+    }
+
+    .button {
+      display: block;
+      text-align: center;
+      width: 100%;
+      margin: 18px 0;
+      padding: 17px 22px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #ff5a9b, #8b5cf6);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 900;
+      box-shadow: 0 12px 28px rgba(0,0,0,.25);
+      border: 1px solid rgba(255,255,255,.35);
+    }
+
+    .small-text {
+      font-size: 12px;
+      color: rgba(255,255,255,.72);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 16px 0 26px;
+    }
+
+    .benefit {
+      background: rgba(255,255,255,.16);
+      border-radius: 18px;
+      padding: 15px 12px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,.14);
+    }
+
+    .benefit div {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .benefit strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .testimonial p,
+    .faq p {
+      color: rgba(255,255,255,.84);
+      line-height: 1.5;
+      margin-top: 8px;
+    }
+
+    .faq h3 {
+      font-size: 17px;
+    }
+
+    .contacts {
+      text-align: center;
+      margin-top: 32px;
+    }
+
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .contact-icons a {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,.18);
+      color: #fff;
+      font-size: 25px;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,.2);
+    }
+
+    footer {
+      text-align: center;
+      color: rgba(255,255,255,.58);
+      font-size: 13px;
+      margin-top: 34px;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <section class="hero">
+      <img class="logo" src="https://i.postimg.cc/XJc8dJP8/logo-kings.png" alt="Logo King Sheets" />
+      <h1>KING SHEETS</h1>
+      <p class="headline">Planilha Financeira <span>Hello Kitty</span></p>
+      <p class="subtitle">
+        Organize seus gastos, acompanhe metas e tenha mais controle financeiro com uma planilha fofa, prática e automática.
+      </p>
+    </section>
+
+    <div class="notice">
+      <strong>☁️ Exclusivo para Google Planilhas</strong>
+      <p>Use pelo celular ou computador. Não precisa instalar nada e não possui mensalidade.</p>
+      <p><strong>Nota:</strong> não é compatível com Microsoft Excel.</p>
+    </div>
+
+    <div style="text-align:center">
+      <span class="tag">✅ Pagamento único</span>
+    </div>
+
+    <section class="product-card">
+      <span class="badge">MAIS FOFA</span>
+      <h2 class="section-title">🎀 Planilha Financeira Hello Kitty</h2>
+      <img class="preview" src="https://i.postimg.cc/dtzyQFHd/Chat-GPT-Image-6-de-mai-de-2026-12-52-08.png" alt="Planilha Financeira Hello Kitty" />
+      <p class="small-text">*Imagem meramente ilustrativa. O produto final pode ter pequenas variações visuais.</p>
+      <div class="price">R$ 47,00</div>
+      <a class="button" href="https://pay.kiwify.com.br/cIcb4z3" target="_blank">Comprar agora 💖</a>
+    </section>
+
+    <h2 class="section-title">O QUE VOCÊ VAI TER</h2>
+
+    <section class="benefits">
+      <div class="benefit"><div>💰</div><strong>Controle de entradas e saídas</strong></div>
+      <div class="benefit"><div>📊</div><strong>Gráficos automáticos</strong></div>
+      <div class="benefit"><div>🎯</div><strong>Metas financeiras</strong></div>
+      <div class="benefit"><div>📱</div><strong>Acesso pelo celular</strong></div>
+      <div class="benefit"><div>🎀</div><strong>Design Hello Kitty</strong></div>
+      <div class="benefit"><div>⚡</div><strong>Fácil de preencher</strong></div>
+    </section>
+
+    <section class="testimonial">
+      <h2 class="section-title" style="margin-top:0">POR QUE COMPRAR?</h2>
+      <p>
+        Porque controlar sua vida financeira não precisa ser complicado. Com uma planilha visual, automática e organizada, você entende melhor seus gastos, acompanha sua evolução e toma decisões com mais segurança.
+      </p>
+    </section>
+
+    <h2 class="section-title">DÚVIDAS RÁPIDAS 💬</h2>
+
+    <section class="faq">
+      <h3>Preciso saber mexer em planilhas?</h3>
+      <p>Não. A planilha foi criada para ser simples e intuitiva. Você só preenche as informações principais.</p>
+    </section>
+
+    <section class="faq">
+      <h3>Funciona no celular?</h3>
+      <p>Sim. Você consegue usar pelo aplicativo do Google Planilhas ou pelo navegador.</p>
+    </section>
+
+    <section class="faq">
+      <h3>Tem mensalidade?</h3>
+      <p>Não. O pagamento é único.</p>
+    </section>
+
+    <a class="button" href="https://pay.kiwify.com.br/cIcb4z3" target="_blank">Quero minha planilha agora 🚀</a>
+
+    <section class="contacts">
+      <h2>Entre em contato 👇</h2>
+      <div class="contact-icons">
+        <a href="https://www.instagram.com/king.sheets?igsh=ZzNtdDJsbXN5NTE3" target="_blank">📷</a>
+        <a href="mailto:kings.sheets939@gmail.com">✉️</a>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 King Sheets<br />
+      Planilhas personalizadas para Google Sheets
+    </footer>
+  </main>
+</body>
+</html>
